@@ -31,8 +31,8 @@ export default function ContactPage() {
           📬 Contact Us
         </motion.h1>
         <p className="text-center text-gray-600 mb-10">
-          We'd love to hear from you. Fill out the form below and we'll get back
-          to you.
+          We would love to hear from you. Fill out the form below and we will
+          get back to you.
         </p>
 
         <form

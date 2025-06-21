@@ -1,6 +1,7 @@
 // src/components/home/ServicesSection.tsx
 "use client";
 
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 const services = [
@@ -37,12 +38,11 @@ export const ServicesSection = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-800 mb-4">{service.description}</p>
-                <a
-                  href="/services"
-                  className="inline-block bg-green-700 text-white px-4 py-2 rounded-full text-sm hover:bg-red-800 transition"
-                >
-                  Read More
-                </a>
+                <Link href="/services">
+                  <a className="inline-block bg-green-700 text-white px-4 py-2 rounded-full text-sm hover:bg-red-800 transition">
+                    Read More
+                  </a>
+                </Link>
               </div>
             </Fade>
           ))}
