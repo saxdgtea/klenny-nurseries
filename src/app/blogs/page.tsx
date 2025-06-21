@@ -1,3 +1,4 @@
+// src/app/blogs/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -5,65 +6,9 @@ import { motion } from "framer-motion";
 import { FaThumbsUp } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 import Link from "next/link";
+import { blogPosts } from "../../../lib/blogs";
 
 const categories = ["All", "Landscaping", "Nurseries", "Advising"];
-
-const blogData = [
-  {
-    id: 1,
-    slug: "spring-landscaping-tips",
-    title: "How to Plan the Perfect Garden Landscape",
-    category: "Landscaping",
-    image: "/blog1.jpg",
-    content:
-      "Learn how to transform your outdoor space with creative landscaping ideas tailored to your environment.",
-  },
-  {
-    id: 2,
-    slug: "spring-landscaping-tips",
-    title: "Top Nursery Picks for 2025",
-    category: "Nurseries",
-    image: "/blog2.jpg",
-    content:
-      "Explore the most recommended plants for your farm or garden this year, straight from our nursery experts.",
-  },
-  {
-    id: 3,
-    slug: "spring-landscaping-tips",
-    title: "Expert Advice for Maintaining Soil Health",
-    category: "Advising",
-    image: "/blog3.jpg",
-    content:
-      "Improve crop yield and plant health by following soil management tips from our experienced agronomists.",
-  },
-  {
-    id: 4,
-    slug: "spring-landscaping-tips",
-    title: "Landscaping on a Budget",
-    category: "Landscaping",
-    image: "/blog4.jpg",
-    content:
-      "Effective landscaping doesn't have to be expensive—check out our cost-friendly tips for big impact.",
-  },
-  {
-    id: 5,
-    slug: "spring-landscaping-tips",
-    title: "Nursery Trends: Native Plants & Why They Matter",
-    category: "Nurseries",
-    image: "/blog5.jpg",
-    content:
-      "Discover why native species are thriving in nurseries and how they benefit your environment long-term.",
-  },
-  {
-    id: 6,
-    slug: "spring-landscaping-tips",
-    title: "Nursery Trends: Native Plants & Why They Matter",
-    category: "Nurseries",
-    image: "/blog6.jpg",
-    content:
-      "The best way to plant good cabbages is by using good planting materials.",
-  },
-];
 
 export default function BlogsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -71,8 +16,8 @@ export default function BlogsPage() {
 
   const filteredBlogs =
     selectedCategory === "All"
-      ? blogData
-      : blogData.filter((blog) => blog.category === selectedCategory);
+      ? blogPosts
+      : blogPosts.filter((blog) => blog.category === selectedCategory);
 
   const handleLike = (id: number) => {
     setLikes((prev) => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
@@ -82,7 +27,6 @@ export default function BlogsPage() {
     <Fade delay={100} duration={250} triggerOnce>
       <div className="bg-green-50 min-h-screen">
         <main className="pt-24 pb-16 px-4 max-w-7xl mx-auto">
-          {/* Page Heading */}
           <motion.h1
             className="text-4xl font-bold text-green-800 text-center mb-3"
             initial={{ opacity: 0, y: -20 }}
@@ -95,7 +39,6 @@ export default function BlogsPage() {
             FarmLife team.
           </p>
 
-          {/* Category Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((cat) => (
               <button
@@ -112,7 +55,6 @@ export default function BlogsPage() {
             ))}
           </div>
 
-          {/* Blog Grid */}
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {filteredBlogs.map((blog, index) => (
               <Link href={`/blogs/${blog.slug}`} key={blog.id}>
@@ -139,7 +81,10 @@ export default function BlogsPage() {
                     <div className="mt-4 flex justify-between items-center text-sm text-green-800">
                       <span className="italic">{blog.category}</span>
                       <button
-                        onClick={() => handleLike(blog.id)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleLike(blog.id);
+                        }}
                         className="flex items-center gap-1 hover:text-red-600 transition"
                       >
                         <FaThumbsUp />

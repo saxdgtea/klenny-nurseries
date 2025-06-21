@@ -2,15 +2,17 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { blogPosts } from "../../../../lib/blogs";
 
+interface BlogDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   return blogPosts.map((blog) => ({ slug: blog.slug }));
 }
 
-export default function BlogDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function BlogDetailPage({ params }: BlogDetailPageProps) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
 
   if (!blog) return notFound();

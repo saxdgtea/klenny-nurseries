@@ -2,32 +2,56 @@
 export const blogPosts = [
   {
     id: 1,
-    slug: "spring-landscaping-tips",
-    title: "Spring Landscaping Tips",
-    image: "/blog1.jpg",
+    slug: "perfect-garden-landscape",
+    title: "How to Plan the Perfect Garden Landscape",
     category: "Landscaping",
-    content: `Get your garden ready this spring with our top tips.
-    
-- Remove weeds
-- Apply compost
-- Trim dead branches
-
-Your lawn will thank you later!`,
+    image: "/blog1.jpeg",
+    content:
+      "Learn how to transform your outdoor space with creative landscaping ideas tailored to your environment.",
   },
   {
     id: 2,
-    slug: "top-5-plants-for-beginners",
-    title: "Top 5 Plants for Beginners",
-    image: "/blog2.jpg",
+    slug: "top-nursery-picks-2025",
+    title: "Top Nursery Picks for 2025",
     category: "Nurseries",
-    content: `Here are 5 beginner-friendly plants:
-
-1. Snake Plant
-2. Spider Plant
-3. Peace Lily
-4. ZZ Plant
-5. Aloe Vera
-
-Start your plant journey today!`,
+    image: "/blog2.jpg",
+    content:
+      "Explore the most recommended plants for your farm or garden this year, straight from our nursery experts.",
+  },
+  {
+    id: 3,
+    slug: "soil-health-advice",
+    title: "Expert Advice for Maintaining Soil Health",
+    category: "Advising",
+    image: "/blog3.jpeg",
+    content:
+      "Improve crop yield and plant health by following soil management tips from our experienced agronomists.",
+  },
+  {
+    id: 4,
+    slug: "landscaping-on-budget",
+    title: "Landscaping on a Budget",
+    category: "Landscaping",
+    image: "/blog4.jpg",
+    content:
+      "Effective landscaping doesn't have to be expensive—check out our cost-friendly tips for big impact.",
+  },
+  {
+    id: 5,
+    slug: "native-plants-benefits",
+    title: "Nursery Trends: Native Plants & Why They Matter",
+    category: "Nurseries",
+    image: "/blog5.jpg",
+    content:
+      "Discover why native species are thriving in nurseries and how they benefit your environment long-term.",
+  },
+  {
+    id: 6,
+    slug: "cabbage-planting-tips",
+    title: "Best Way to Plant Good Cabbages",
+    category: "Nurseries",
+    image: "/blog6.jpg",
+    content:
+      "The best way to plant good cabbages is by using good planting materials.",
   },
 ];
