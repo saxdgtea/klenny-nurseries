@@ -2,21 +2,18 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { blogPosts } from "../../../../lib/blogs";
 
-// ✅ Correctly typed dynamic route props
-type BlogDetailPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-// ✅ For Static Site Generation
+// ✅ Don't define your own type — inline is safest with App Router
 export async function generateStaticParams() {
   return blogPosts.map((blog) => ({
     slug: blog.slug,
   }));
 }
 
-export default function BlogDetailPage({ params }: BlogDetailPageProps) {
+export default function BlogDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const blog = blogPosts.find((b) => b.slug === params.slug);
 
   if (!blog) return notFound();
