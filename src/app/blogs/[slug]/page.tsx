@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { blogPosts } from "../../../../lib/blogs";
 
-// ✅ Don't define your own type — inline is safest with App Router
+// ✅ Static params generator
 export async function generateStaticParams() {
   return blogPosts.map((blog) => ({
     slug: blog.slug,
   }));
 }
 
+// ✅ Correct default export for dynamic route (no external interface)
 export default function BlogDetailPage({
   params,
 }: {
