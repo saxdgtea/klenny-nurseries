@@ -25,9 +25,9 @@ export const ProjectsSection = () => {
                   <h3 className="text-xl font-semibold text-gray-800">
                     Project #{i}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-black text-lg ">
                     A showcase of our recent transformation in a client’s
-                    backyard paradise.
+                    backyard paradise.these took the whole team.
                   </p>
                 </div>
               </div>

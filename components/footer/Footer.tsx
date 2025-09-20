@@ -22,7 +22,7 @@ export const Footer = () => {
         {/* Logo & Tagline */}
         <div>
           <h2 className="text-2xl font-bold mb-2">🌱 FarmLife</h2>
-          <p className="text-sm text-green-100">
+          <p className="text-lg text-green-100">
             Growing beauty, one garden at a time.
           </p>
         </div>
@@ -31,10 +31,18 @@ export const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
+             <li>
+              <Link
+                href="/"
+                className=" text-lg relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+
+              >  Home</Link>
+              </li>
             <li>
               <Link
                 href="/services"
-                className="hover:text-yellow-300 transition-colors"
+                className=" text-lg relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+
               >
                 Services
               </Link>
@@ -42,7 +50,8 @@ export const Footer = () => {
             <li>
               <Link
                 href="/blogs"
-                className="hover:text-yellow-300 transition-colors"
+               className=" text-lg relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+
               >
                 Blogs
               </Link>
@@ -50,7 +59,8 @@ export const Footer = () => {
             <li>
               <Link
                 href="/about"
-                className="hover:text-yellow-300 transition-colors"
+                className=" text-lg relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+
               >
                 About
               </Link>
@@ -58,7 +68,8 @@ export const Footer = () => {
             <li>
               <Link
                 href="/contact"
-                className="hover:text-yellow-300 transition-colors"
+                className="text-lg relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full"
+
               >
                 Contact
               </Link>

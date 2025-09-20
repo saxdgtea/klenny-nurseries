@@ -36,8 +36,8 @@ export const Navbar = () => {
               <Link
                 key={href}
                 href={href}
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
+            className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300 hover:after:w-full text-lg transition-colors active:text-yellow-300"
+>
                 {label}
               </Link>
             ))}

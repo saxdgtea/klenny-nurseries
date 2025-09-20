@@ -1,6 +1,8 @@
 // src/app/blogs/page.tsx
 "use client";
 
+import Image from 'next/image'
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaThumbsUp } from "react-icons/fa";
@@ -34,7 +36,7 @@ export default function BlogsPage() {
           >
             🌿 Our Blog
           </motion.h1>
-          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-bold mb-10 max-w-2xl mx-auto">
             Stay informed with tips, updates, and expert advice from the
             FarmLife team.
           </p>
@@ -44,7 +46,7 @@ export default function BlogsPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+                className={`px-4 py-2 rounded-full text-lg font-semibold transition ${
                   selectedCategory === cat
                     ? "bg-green-700 text-white"
                     : "bg-green-100 text-green-700 hover:bg-green-200"
@@ -64,17 +66,19 @@ export default function BlogsPage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
                 >
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="h-48 w-full object-cover"
-                  />
+        <Image
+  src={blog.image}
+  alt={blog.title}
+  width={800}
+  height={400}
+  className="w-full h-48 object-cover rounded-xl shadow-sm"
+/>
                   <div className="p-5 flex flex-col justify-between h-full">
                     <div>
                       <h3 className="text-lg font-semibold text-green-900 mb-2">
                         {blog.title}
                       </h3>
-                      <p className="text-gray-600 text-sm line-clamp-3">
+                      <p className="text-gray-600 text-lg line-clamp-3">
                         {blog.content}
                       </p>
                     </div>

@@ -8,7 +8,7 @@ const services = [
     id: 1,
     slug: "landscaping",
     title: "Landscaping",
-    image: "/services/landscaping.jpg",
+    image: "blog3.jpeg",
     description:
       "Transform your space with beautiful, functional landscapes designed for sustainability and beauty.",
   },
@@ -16,7 +16,7 @@ const services = [
     id: 2,
     slug: "nurseries",
     title: "Tree Nurseries",
-    image: "/services/nurseries.jpg",
+    image: "blog1.jpeg",
     description:
       "We grow and supply healthy, climate-adapted tree seedlings perfect for your farm or yard.",
   },
@@ -24,7 +24,7 @@ const services = [
     id: 3,
     slug: "advising",
     title: "Agricultural Advising",
-    image: "/services/advising.jpg",
+    image: "blog1.jpeg",
     description:
       "Get expert advice on farming practices, soil health, crop rotation, and agribusiness strategy.",
   },
